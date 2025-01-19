@@ -64,4 +64,31 @@ header .nav-link.active::after {
     font-size: 1.75rem;
     line-height: 2.5rem;
   }
+}
+.about .about-body .about-image .image {
+  position: relative;
+  padding-left: 2rem;
+}
+.about .about-body .about-image .image::after {
+  content: "";
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  background-image: url("../assets/images//dots.png");
+  background-repeat: repeat;
+  z-index: -1;
+}
+.about .about-body p {
+  line-height: 1.6rem;
+}
+.about .about-body button {
+  background-color: #f35525;
+  border: 1px solid #f35525 !important;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+.about .about-body button:hover {
+  background-color: #fff;
+  color: #f35525 !important;
 }/*# sourceMappingURL=style.css.map */
