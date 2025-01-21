@@ -189,6 +189,24 @@ header
         }
     }
 }
+.works 
+{
+    .work
+    {
+        &:hover 
+        {
+            .layer 
+            {
+                transition: top .5s ease-in-out;
+                top: 0 !important;
+            }
+        }
+        span 
+        {
+            background-color: $second-color;
+        }
+    }
+}
 
 
 
