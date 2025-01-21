@@ -2,6 +2,7 @@
 $main-bg: #fff;
 $text-color: #000;
 $second-color: #f35525;
+$bg-gray: #fafafa;
 
 html 
 {
@@ -144,5 +145,50 @@ header
         }
     }
 }
+.services 
+{
+    background-color: $bg-gray;
+    .services-body 
+    {
+        .service 
+        {
+            &:hover 
+            {
+                .service-icon 
+                {
+                    background-color: $text-color;
+                    color: $main-bg;
+                }
+            }
+            .service-icon 
+            {
+                width: 4.25rem;
+                height: 4.25rem;
+                background-color:  #f4f4f4;
+                transition: background-color .5s ease-in-out, color .5s ease-in-out;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1200px) 
+{
+    .services 
+    {
+        .services-body  
+        {
+            .service  
+            {
+                .service-title 
+                {
+                    h4 
+                    {
+                        font-size: 1.25rem !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 

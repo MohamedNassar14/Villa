@@ -91,4 +91,24 @@ header .nav-link.active::after {
 .about .about-body button:hover {
   background-color: #fff;
   color: #f35525 !important;
+}
+
+.services {
+  background-color: #fafafa;
+}
+.services .services-body .service:hover .service-icon {
+  background-color: #000;
+  color: #fff;
+}
+.services .services-body .service .service-icon {
+  width: 4.25rem;
+  height: 4.25rem;
+  background-color: #f4f4f4;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+  .services .services-body .service .service-title h4 {
+    font-size: 1.25rem !important;
+  }
 }/*# sourceMappingURL=style.css.map */
