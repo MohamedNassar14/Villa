@@ -196,4 +196,8 @@ header .nav-link.active::after {
 }
 .contact .contact-info button:hover {
   background-color: #f35525;
+}
+
+.footer {
+  background-color: #000;
 }/*# sourceMappingURL=style.css.map */
