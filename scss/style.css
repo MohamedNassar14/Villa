@@ -118,4 +118,24 @@ header .nav-link.active::after {
 }
 .works .work span {
   background-color: #f35525;
+}
+
+.blog {
+  background-color: #fafafa;
+}
+.blog .blogs-body .blog img {
+  transition: transform 0.7s ease-in-out;
+}
+.blog .blogs-body .blog img:hover {
+  transform: scale(1.2, 1.2);
+}
+.blog .blogs-body .blog span {
+  background-color: #f35525;
+  border: 1px solid #f35525;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.blog .blogs-body .blog span:hover {
+  background-color: #fff;
+  color: #f35525 !important;
 }/*# sourceMappingURL=style.css.map */
