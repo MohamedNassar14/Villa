@@ -12,3 +12,6 @@ HTML, SCSS, Bootstrap
 
 ## Contributing
 Contributions are welcome! If you have any suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+
+## Live Preview
+https://dream-villa.vercel.app
