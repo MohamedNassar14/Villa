@@ -15,6 +15,10 @@ section {
   padding: 4rem 0 2rem;
 }
 
+span {
+  color: #f35525;
+}
+
 header .nav-link::after {
   content: "";
   position: relative;
@@ -24,7 +28,7 @@ header .nav-link::after {
   width: 0;
   height: 2px;
   background-color: #f35525;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.3s ease-in-out, 0.3s ease-in-out;
 }
 header .nav-link:hover::after {
   width: 100%;
@@ -33,14 +37,6 @@ header .nav-link.active::after {
   width: 100%;
 }
 
-@media screen and (max-width: 992px) {
-  .nav-link {
-    display: inline-block;
-  }
-  .navbar-toggler:focus {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
-  }
-}
 .home {
   background: url("../assets/images/banner.webp") no-repeat center/cover;
 }
@@ -53,18 +49,6 @@ header .nav-link.active::after {
   line-height: 4.25rem;
 }
 
-@media screen and (max-width: 768px) {
-  .home h2 {
-    font-size: 3rem;
-    line-height: 3.75rem;
-  }
-}
-@media screen and (max-width: 480px) {
-  .home h2 {
-    font-size: 1.75rem;
-    line-height: 2.5rem;
-  }
-}
 .about .about-body .about-image .image {
   position: relative;
   padding-left: 2rem;
@@ -76,7 +60,7 @@ header .nav-link.active::after {
   position: absolute;
   left: 0;
   bottom: -2rem;
-  background-image: url("../assets/images//dots.png");
+  background-image: url("../assets/images/dots.webp");
   background-repeat: repeat;
   z-index: -1;
 }
@@ -86,7 +70,7 @@ header .nav-link.active::after {
 .about .about-body button {
   background-color: #f35525;
   border: 1px solid #f35525 !important;
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .about .about-body button:hover {
   background-color: #fff;
@@ -94,37 +78,39 @@ header .nav-link.active::after {
 }
 
 .services {
-  background-color: #fafafa;
+  background-color: #f7f7f7;
 }
-.services .services-body .service:hover .service-icon {
-  background-color: #000;
+.services .services-body .service .service-content:hover .service-icon {
+  background-color: #f35525;
   color: #fff;
 }
-.services .services-body .service .service-icon {
+.services .services-body .service .service-content .service-icon {
   width: 4.25rem;
   height: 4.25rem;
   background-color: #f4f4f4;
-  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 1200px) {
-  .services .services-body .service .service-title h4 {
-    font-size: 1.25rem !important;
-  }
+.works .works-body .nav-link {
+  color: #6c6c6c;
 }
-.works .work:hover .layer {
-  transition: top 0.5s ease-in-out;
+.works .works-body .nav-link.active {
+  background-color: #f35525;
+  color: #fff;
+}
+.works .works-body .work:hover .layer {
+  transition: top 0.3s ease-in-out, 0.3s ease-in-out;
   top: 0 !important;
 }
-.works .work span {
+.works .works-body .work span {
   background-color: #f35525;
 }
 
 .blog {
-  background-color: #fafafa;
+  background-color: #f7f7f7;
 }
 .blog .blogs-body .blog img {
-  transition: transform 0.7s ease-in-out;
+  transition: transform 0.3s ease-in-out, 0.3s ease-in-out;
 }
 .blog .blogs-body .blog img:hover {
   transform: scale(1.2, 1.2);
@@ -156,6 +142,7 @@ header .nav-link.active::after {
   background-color: #f6f6f6;
   padding: 0.75rem;
   font-size: 0.9rem;
+  border: 2px solid #f6f6f6;
 }
 .contact .contact-info input:focus {
   box-shadow: none;
@@ -176,6 +163,7 @@ header .nav-link.active::after {
   color: #000;
   border-radius: 1.35rem;
   font-size: 0.9rem;
+  border: 2px solid #f6f6f6;
 }
 .contact .contact-info textarea:focus {
   box-shadow: none;
@@ -192,7 +180,7 @@ header .nav-link.active::after {
 .contact .contact-info button {
   padding: 0.75rem 1.5rem;
   background-color: #000;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, 0.3s ease-in-out;
 }
 .contact .contact-info button:hover {
   background-color: #f35525;
@@ -200,4 +188,33 @@ header .nav-link.active::after {
 
 .footer {
   background-color: #000;
+}
+
+@media screen and (max-width: 992px) {
+  .nav-link {
+    display: inline-block;
+  }
+  .navbar-toggler:focus {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
+  }
+  .form {
+    width: 100% !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+  .container {
+    --bs-gutter-x: 2.5rem !important;
+  }
+  .home h2 {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
 }/*# sourceMappingURL=style.css.map */

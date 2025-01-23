@@ -2,27 +2,38 @@
 $main-bg: #fff;
 $text-color: #000;
 $second-color: #f35525;
-$bg-gray: #fafafa;
+$bg-gray: #f7f7f7;
 
-html {
+@mixin serTransition($property1, $property2:null)
+{
+    transition: $property1 .3s ease-in-out, $property2 .3s ease-in-out;
+}
+html 
+{
     font-size: 16px;
     scroll-behavior: smooth;
 }
-
-body {
+body 
+{
     font-family: 'Poppins', sans-serif;
     background-color: $main-bg;
     color: $text-color;
 }
-
-section {
+section 
+{
     min-height: 100vh;
     padding: 4rem 0 2rem;
 }
-
-header {
-    .nav-link {
-        &::after {
+span
+{
+    color: $second-color;
+}
+header 
+{
+    .nav-link 
+    {
+        &::after 
+        {
             content: '';
             position: relative;
             display: block;
@@ -31,153 +42,138 @@ header {
             width: 0;
             height: 2px;
             background-color: $second-color;
-            transition: width .5s ease-in-out;
+            @include serTransition(width);
         }
-
-        &:hover {
-            &::after {
+        &:hover 
+        {
+            &::after 
+            {
                 width: 100%;
             }
         }
-
-        &.active {
-            &::after {
+        &.active 
+        {
+            &::after 
+            {
                 width: 100%;
             }
         }
     }
 }
-
-@media screen and (max-width: 992px) {
-    .nav-link {
-        display: inline-block;
-    }
-
-    .navbar-toggler {
-        &:focus {
-            box-shadow: 0 1px 2px rgba(0, 0, 0, .2) !important;
-        }
-    }
-}
-
-.home {
+.home 
+{
     background: url('../assets/images/banner.webp') no-repeat center/cover;
-
-    span {
-        em {
+    span 
+    {
+        em 
+        {
             color: $second-color;
             font-style: normal;
         }
     }
-
-    h2 {
+    h2 
+    {
         font-size: 3.5rem;
         line-height: 4.25rem;
     }
 }
-
-@media screen and (max-width: 768px) {
-    .home {
-        h2 {
-            font-size: 3rem;
-            line-height: 3.75rem;
-        }
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .home {
-        h2 {
-            font-size: 1.75rem;
-            line-height: 2.5rem;
-        }
-    }
-}
-
-.about {
-    .about-body {
-        .about-image {
-            .image {
+.about 
+{
+    .about-body 
+    {
+        .about-image 
+        {
+            .image
+            {
+    
                 position: relative;
                 padding-left: 2rem;
-
-                &::after {
+                &::after 
+                {
                     content: '';
                     width: 80%;
                     height: 80%;
                     position: absolute;
                     left: 0;
                     bottom: -2rem;
-                    background-image: url('../assets/images//dots.png');
+                    background-image: url('../assets/images/dots.webp');
                     background-repeat: repeat;
                     z-index: -1;
                 }
             }
         }
-
-        p {
+        p 
+        {
             line-height: 1.6rem;
         }
-
-        button {
+        button 
+        {
             background-color: $second-color;
             border: 1px solid $second-color !important;
-            transition: background-color .5s ease-in-out, color .5s ease-in-out;
-
-            &:hover {
+            @include serTransition(background-color, color);
+            &:hover 
+            {
                 background-color: $main-bg;
                 color: $second-color !important;
             }
         }
     }
 }
-
-.services {
+.services 
+{
     background-color: $bg-gray;
-
-    .services-body {
-        .service {
-            &:hover {
-                .service-icon {
-                    background-color: $text-color;
-                    color: $main-bg;
-                }
-            }
-
-            .service-icon {
-                width: 4.25rem;
-                height: 4.25rem;
-                background-color: #f4f4f4;
-                transition: background-color .5s ease-in-out, color .5s ease-in-out;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .services {
-        .services-body {
-            .service {
-                .service-title {
-                    h4 {
-                        font-size: 1.25rem !important;
+    .services-body 
+    {
+        .service
+        {
+            .service-content
+            {
+                &:hover 
+                {
+                    .service-icon 
+                    {
+                        background-color: $second-color;
+                        color: $main-bg;
                     }
                 }
+                .service-icon 
+                {
+                    width: 4.25rem;
+                    height: 4.25rem;
+                    background-color: #f4f4f4;
+                    @include serTransition(background-color, color)
+                }
             }
         }
     }
 }
-.works {
-    .work {
-        &:hover {
-            .layer {
-                transition: top .5s ease-in-out;
-                top: 0 !important;
+.works 
+{
+    .works-body 
+    {
+        .nav-link 
+        {
+            color: #6c6c6c;
+            &.active
+            {
+                background-color: $second-color;
+                color: $main-bg;
             }
         }
-
-        span {
-            background-color: $second-color;
+        .work 
+        {
+            &:hover
+            {
+                .layer 
+                {
+                    @include serTransition(top);
+                    top: 0 !important;
+                }
+            }
+            span 
+            {
+                background-color: $second-color;
+            }
         }
     }
 }
@@ -190,7 +186,7 @@ header {
         {
             img 
             {
-                transition: transform .7s ease-in-out;
+                @include serTransition(transform);
                 &:hover 
                 {
                     transform: scale(1.2, 1.2);
@@ -201,7 +197,7 @@ header {
                 background-color: $second-color;
                 border: 1px solid $second-color;
                 cursor: pointer;
-                transition: background-color .3s ease-in-out, color .3s ease-in-out;
+                @include serTransition(background-color, color);
                 &:hover 
                 {
                     background-color: $main-bg;
@@ -238,6 +234,7 @@ header {
             background-color: #f6f6f6;
             padding: 0.75rem;
             font-size: 0.90rem;
+            border: 2px solid #f6f6f6;
             &:focus 
             {
                 box-shadow: none;
@@ -257,6 +254,7 @@ header {
             color: $text-color;
             border-radius: 1.35rem;
             font-size: 0.90rem;
+            border: 2px solid #f6f6f6;
             &:focus 
             {
                 box-shadow: none;
@@ -272,7 +270,7 @@ header {
         {
             padding: 0.75rem 1.5rem;
             background-color: $text-color;
-            transition: background-color .3s ease-in-out;
+            @include serTransition(background-color);
             &:hover 
             {
                 background-color: $second-color ;
@@ -283,4 +281,48 @@ header {
 .footer 
 {
     background-color: $text-color;
+}
+@media screen and (max-width: 992px) 
+{
+    .nav-link 
+    {
+        display: inline-block;
+    }
+    .navbar-toggler 
+    {
+        &:focus 
+        {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2) !important;
+        }
+    }
+    .form 
+    {
+        width: 100% !important;
+    }
+}
+@media screen and (max-width: 768px) 
+{
+    html 
+    {
+        font-size: 14px;
+    }    
+}
+@media screen and (max-width: 500px) 
+{
+    html 
+    {
+        font-size: 12px;
+    }
+    .container 
+    {
+        --bs-gutter-x: 2.5rem !important;
+    }
+    .home 
+    {
+        h2 
+        {
+            font-size: 2rem;
+            line-height: 2.75rem;
+        }
+    }
 }
